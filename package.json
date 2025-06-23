@@ -1,5 +1,5 @@
 {
-	"name": "biome-repro",
+	"name": "astro-biome-format-on-save-mre",
 	"version": "0.0.0",
 	"private": true,
 	"type": "module",

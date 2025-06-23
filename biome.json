@@ -1,9 +1,36 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"assist": {
+		"actions": {
+			"source": {
+				"useSortedKeys": "on"
+			}
+		}
+	},
+	"files": {
+		"includes": ["src/**"]
+	},
 	"linter": {
 		"enabled": true,
 		"rules": {
 			"recommended": true
 		}
-	}
+	},
+	"overrides": [
+		{
+			"includes": ["**/*.astro"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noUnusedImports": "off",
+						"noUnusedVariables": "off"
+					},
+					"style": {
+						"useConst": "on",
+						"useImportType": "off"
+					}
+				}
+			}
+		}
+	]
 }
