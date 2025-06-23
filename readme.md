@@ -11,8 +11,7 @@ The only thing I could find related to this is an issue with the Zed extension w
 
 1. Clone the MRE repo
 2. Open `src/test.astro` in VS Code with the biome extension installed
-3. Save the file
-4. Save the file and watch it format and strip out all code except for the frontmatter
+3. Save the file and watch it format and strip out all code except for the frontmatter
 
 From this:
 
