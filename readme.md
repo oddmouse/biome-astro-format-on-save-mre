@@ -18,10 +18,10 @@ From this:
 ```astro
 ---
 const useSortedKeys = {
-	2: "two",
-	3: "three",
-	1: "one",
-	4: "four",
+  2: "two",
+  3: "three",
+  1: "one",
+  4: "four",
 };
 
 let useConst = "Astro Test";
@@ -46,11 +46,41 @@ To this:
 
 ```
 const useSortedKeys = {
-	1: "one",
-	2: "two",
-	3: "three",
-	4: "four",
+  1: "one",
+  2: "two",
+  3: "three",
+  4: "four",
 };
 
 const useConst = "Astro Test";
+```
+## Expected Behavior
+
+The formatting is expected to be the same as when running `pnpm biome check --fix src/test.astro`.
+
+```astro
+---
+const useSortedKeys = {
+  1: "one",
+  2: "two",
+  3: "three",
+  4: "four",
+};
+
+const useConst = "Astro Test";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{useConst}</title>
+  </head>
+  <body>
+    <h1>{useConst}</h1>
+    <ol>
+      {Object.values(useSortedKeys).map((val) => <li>{val}</li>)}
+    </ol>
+  </body>
+</html>
 ```
